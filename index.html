@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jordan Reyes — Mechatronics Engineer</title>
+<meta name="description" content="Portfolio of Jordan Reyes, a mechatronics engineer working on robotics, control systems and embedded hardware.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=Source+Serif+4:opsz,wght@8..60,400..600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- ===== Header (identical on all three pages — edit all three together) ===== -->
+<header class="site-head">
+  <div class="wrap site-head__inner">
+    <a class="mark" href="index.html">
+      Jordan Reyes
+      <span>Mechatronics engineer</span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="index.html" aria-current="page">Home</a>
+      <a href="projects.html">Projects</a>
+      <a href="about.html">About</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ===== Hero: a drawing title block ===== -->
+  <section class="wrap hero">
+    <h1 class="hero__name">Jordan<br>Reyes</h1>
+
+    <p class="hero__lead">
+      I build control systems for machines that have to work the first time.
+      Most of my work sits where firmware meets hardware — motor control, sensor
+      fusion, and the unglamorous thermal and packaging problems that decide
+      whether any of it survives a field season.
+    </p>
+
+    <dl class="titleblock">
+      <div class="field">
+        <dt>Discipline</dt>
+        <dd>Mechatronics</dd>
+      </div>
+      <div class="field">
+        <dt>Based in</dt>
+        <dd>Austin, Texas</dd>
+      </div>
+      <div class="field field--signal">
+        <dt>Status</dt>
+        <dd>Open to new roles</dd>
+      </div>
+      <div class="field">
+        <dt>Last updated</dt>
+        <dd>September 2026</dd>
+      </div>
+    </dl>
+
+    <div class="actions">
+      <a class="btn" href="projects.html">See the projects</a>
+      <a class="btn btn--ghost" href="mailto:you@example.com">Email me</a>
+    </div>
+  </section>
+
+  <!-- ===== Selected work ===== -->
+  <section class="wrap band--tight band">
+    <div class="band-head">
+      <h2>Selected work</h2>
+      <a class="more" href="projects.html">All projects</a>
+    </div>
+
+    <div class="entries">
+
+      <article class="entry">
+        <div class="entry__body">
+          <h3 class="entry__title"><a href="projects.html#rover-nav">Rover navigation stack</a></h3>
+          <p class="entry__summary">
+            Autonomy for a four-wheel agricultural rover that drives 40-acre
+            fields without a base station. Rewrote the path follower around a
+            pure-pursuit controller and cut row-drift from 30&nbsp;cm to 4&nbsp;cm.
+          </p>
+          <ul class="tags">
+            <li>C++</li><li>ROS 2</li><li>Kalman filtering</li><li>RTK GPS</li>
+          </ul>
+        </div>
+        <dl class="spec">
+          <dt>Role</dt><dd>Lead, team of 3</dd>
+          <dt>Duration</dt><dd>14 months</dd>
+          <dt>Outcome</dt><dd>Shipped to 60 units</dd>
+        </dl>
+      </article>
+
+      <article class="entry">
+        <div class="entry__body">
+          <h3 class="entry__title"><a href="projects.html#battery-thermal">Battery pack thermal redesign</a></h3>
+          <p class="entry__summary">
+            A 4.2&nbsp;kWh pack was derating 20 minutes into every run. Reworked
+            the cold plate geometry and cell spacing until peak cell temperature
+            held under 45&nbsp;°C through a full discharge.
+          </p>
+          <ul class="tags">
+            <li>SolidWorks</li><li>Ansys Fluent</li><li>Thermocouple testing</li>
+          </ul>
+        </div>
+        <dl class="spec">
+          <dt>Role</dt><dd>Sole engineer</dd>
+          <dt>Duration</dt><dd>5 months</dd>
+          <dt>Outcome</dt><dd>Derating eliminated</dd>
+        </dl>
+      </article>
+
+      <article class="entry">
+        <div class="entry__body">
+          <h3 class="entry__title"><a href="projects.html#motor-controller">Four-layer motor controller</a></h3>
+          <p class="entry__summary">
+            A 48&nbsp;V, 30&nbsp;A brushless controller built to replace a
+            €400 off-the-shelf board. Three spins to get gate-drive ringing under
+            control; the layout notes are in the repo.
+          </p>
+          <ul class="tags">
+            <li>KiCad</li><li>STM32</li><li>Power electronics</li>
+          </ul>
+        </div>
+        <dl class="spec">
+          <dt>Role</dt><dd>Sole engineer</dd>
+          <dt>Duration</dt><dd>4 months</dd>
+          <dt>Outcome</dt><dd>Open source, 340 stars</dd>
+        </dl>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ===== Contact ===== -->
+  <section class="wrap band--tight band">
+    <div class="contact">
+      <div>
+        <h2>Looking for someone who can take a system end to end?</h2>
+        <p>I read every message and reply within a couple of days.</p>
+      </div>
+      <a class="btn" href="mailto:you@example.com">Start a conversation</a>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===== Footer (identical on all three pages) ===== -->
+<footer class="site-foot">
+  <div class="wrap site-foot__inner">
+    <p>© 2026 Jordan Reyes</p>
+    <ul>
+      <li><a href="mailto:you@example.com">you@example.com</a></li>
+      <li><a href="https://github.com/your-username">GitHub</a></li>
+      <li><a href="https://www.linkedin.com/in/your-handle/">LinkedIn</a></li>
+      <li><a href="resume.pdf">Résumé</a></li>
+    </ul>
+  </div>
+</footer>
+
+</body>
+</html>

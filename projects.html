@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Projects — Jordan Reyes</title>
+<meta name="description" content="Engineering projects by Jordan Reyes: robotics, control systems, thermal design and embedded hardware.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=Source+Serif+4:opsz,wght@8..60,400..600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-head">
+  <div class="wrap site-head__inner">
+    <a class="mark" href="index.html">
+      Jordan Reyes
+      <span>Mechatronics engineer</span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="index.html">Home</a>
+      <a href="projects.html" aria-current="page">Projects</a>
+      <a href="about.html">About</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="wrap page-head">
+    <h1>Projects</h1>
+    <p>
+      Six things I built, roughly newest first. Each one lists what I actually
+      did versus what the team did — the distinction matters more than the
+      screenshots.
+    </p>
+  </section>
+
+  <section class="wrap band--tight band" style="padding-top:0">
+    <div class="entries">
+
+      <!-- Duplicate one <article class="entry"> block per project. -->
+
+      <article class="entry" id="rover-nav">
+        <div class="entry__body">
+          <h2 class="entry__title">Rover navigation stack</h2>
+          <p class="entry__summary">
+            Autonomy for a four-wheel agricultural rover covering 40-acre fields
+            without a local base station. The original path follower drifted
+            badly between crop rows on slopes. I replaced it with a pure-pursuit
+            controller fed by a loosely-coupled GPS/IMU filter, then spent a
+            season tuning it against real furrow data. Row-drift went from about
+            30&nbsp;cm to 4&nbsp;cm, which is the difference between a clean pass
+            and a destroyed crop row.
+          </p>
+          <ul class="tags">
+            <li>C++</li><li>ROS 2</li><li>Kalman filtering</li><li>RTK GPS</li><li>Field testing</li>
+          </ul>
+          <p class="entry__links">
+            <a href="https://github.com/your-username/rover-nav">Source code</a>
+            <a href="#">Write-up</a>
+          </p>
+        </div>
+        <dl class="spec">
+          <dt>Year</dt><dd>2025–2026</dd>
+          <dt>Role</dt><dd>Lead, team of 3</dd>
+          <dt>Duration</dt><dd>14 months</dd>
+          <dt>Tools</dt><dd>ROS 2, Gazebo, C++17</dd>
+          <dt>Outcome</dt><dd>Shipped to 60 units</dd>
+        </dl>
+      </article>
+
+      <article class="entry" id="battery-thermal">
+        <div class="entry__body">
+          <h2 class="entry__title">Battery pack thermal redesign</h2>
+          <p class="entry__summary">
+            A 4.2&nbsp;kWh pack kept derating twenty minutes into every run.
+            Instrumenting it with 16 thermocouples showed a hot band through the
+            middle three modules that the original single-pass cold plate never
+            reached. I reworked the plate into a two-pass serpentine, opened up
+            cell spacing by 1.5&nbsp;mm, and validated against CFD before cutting
+            metal. Peak cell temperature now holds under 45&nbsp;°C through a
+            full discharge.
+          </p>
+          <ul class="tags">
+            <li>SolidWorks</li><li>Ansys Fluent</li><li>GD&amp;T</li><li>Thermocouple testing</li>
+          </ul>
+          <p class="entry__links">
+            <a href="#">Test report (PDF)</a>
+          </p>
+        </div>
+        <dl class="spec">
+          <dt>Year</dt><dd>2025</dd>
+          <dt>Role</dt><dd>Sole engineer</dd>
+          <dt>Duration</dt><dd>5 months</dd>
+          <dt>Tools</dt><dd>SolidWorks, Fluent</dd>
+          <dt>Outcome</dt><dd>Derating eliminated</dd>
+        </dl>
+      </article>
+
+      <article class="entry" id="motor-controller">
+        <div class="entry__body">
+          <h2 class="entry__title">Four-layer brushless motor controller</h2>
+          <p class="entry__summary">
+            A 48&nbsp;V, 30&nbsp;A field-oriented controller built to replace a
+            €400 off-the-shelf board that we could not get datasheets for. Three
+            board spins: the first two had gate-drive ringing that was clipping
+            the current sense. Fixing it came down to a tighter return path and a
+            proper Kelvin connection on the shunts. Layout notes and scope traces
+            from each spin are in the repo.
+          </p>
+          <ul class="tags">
+            <li>KiCad</li><li>STM32</li><li>FOC</li><li>Power electronics</li>
+          </ul>
+          <p class="entry__links">
+            <a href="https://github.com/your-username/bldc-controller">Source code</a>
+            <a href="#">Schematic (PDF)</a>
+          </p>
+        </div>
+        <dl class="spec">
+          <dt>Year</dt><dd>2024</dd>
+          <dt>Role</dt><dd>Sole engineer</dd>
+          <dt>Duration</dt><dd>4 months</dd>
+          <dt>Tools</dt><dd>KiCad, STM32CubeIDE</dd>
+          <dt>Outcome</dt><dd>Open source, 340 stars</dd>
+        </dl>
+      </article>
+
+      <article class="entry" id="telemetry">
+        <div class="entry__body">
+          <h2 class="entry__title">Field telemetry dashboard</h2>
+          <p class="entry__summary">
+            Our test engineers were pulling SD cards out of rovers to find out
+            why a run failed. I put a cellular link on the fleet and built a
+            dashboard that streams 40 channels at 10&nbsp;Hz, with a ring buffer
+            that survives the long dead zones between cell towers. Debug cycles
+            on field failures dropped from days to about an hour.
+          </p>
+          <ul class="tags">
+            <li>Python</li><li>FastAPI</li><li>React</li><li>TimescaleDB</li><li>MQTT</li>
+          </ul>
+          <p class="entry__links">
+            <a href="https://github.com/your-username/telemetry">Source code</a>
+            <a href="#">Live demo</a>
+          </p>
+        </div>
+        <dl class="spec">
+          <dt>Year</dt><dd>2024</dd>
+          <dt>Role</dt><dd>Sole engineer</dd>
+          <dt>Duration</dt><dd>3 months</dd>
+          <dt>Tools</dt><dd>FastAPI, React, Docker</dd>
+          <dt>Outcome</dt><dd>Used daily by 8 people</dd>
+        </dl>
+      </article>
+
+      <article class="entry" id="bracket-tool">
+        <div class="entry__body">
+          <h2 class="entry__title">Parametric bracket generator</h2>
+          <p class="entry__summary">
+            Our team was hand-modelling the same class of mounting bracket over
+            and over. This tool takes load case, bolt pattern and envelope, runs
+            a topology optimisation, and writes out a printable STEP file with a
+            stress summary. It is not smarter than an engineer — it just removes
+            an afternoon of clicking from a routine job.
+          </p>
+          <ul class="tags">
+            <li>Python</li><li>FreeCAD API</li><li>Topology optimisation</li><li>FEA</li>
+          </ul>
+          <p class="entry__links">
+            <a href="https://github.com/your-username/bracket-gen">Source code</a>
+          </p>
+        </div>
+        <dl class="spec">
+          <dt>Year</dt><dd>2023</dd>
+          <dt>Role</dt><dd>Sole engineer</dd>
+          <dt>Duration</dt><dd>6 weeks</dd>
+          <dt>Tools</dt><dd>Python, FreeCAD, CalculiX</dd>
+          <dt>Outcome</dt><dd>Internal tool, still in use</dd>
+        </dl>
+      </article>
+
+      <article class="entry" id="capstone">
+        <div class="entry__body">
+          <h2 class="entry__title">Cable-driven rehabilitation exoskeleton</h2>
+          <p class="entry__summary">
+            Senior capstone: a two-degree-of-freedom elbow and wrist assist for
+            stroke rehabilitation, driven by Bowden cables so the actuators could
+            sit off the arm. I owned the cable routing and the compliance
+            control. The honest result is that it worked on a bench and was too
+            heavy for a real patient session — the write-up covers what I would
+            do differently.
+          </p>
+          <ul class="tags">
+            <li>Impedance control</li><li>Arduino</li><li>Fusion 360</li><li>Human factors</li>
+          </ul>
+          <p class="entry__links">
+            <a href="#">Capstone report (PDF)</a>
+          </p>
+        </div>
+        <dl class="spec">
+          <dt>Year</dt><dd>2022</dd>
+          <dt>Role</dt><dd>Controls &amp; mechanism, team of 4</dd>
+          <dt>Duration</dt><dd>9 months</dd>
+          <dt>Tools</dt><dd>Fusion 360, Arduino, MATLAB</dd>
+          <dt>Outcome</dt><dd>Bench prototype</dd>
+        </dl>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="wrap band--tight band">
+    <div class="contact">
+      <div>
+        <h2>Want the detail behind any of these?</h2>
+        <p>Happy to walk through the decisions, including the ones that went wrong.</p>
+      </div>
+      <a class="btn" href="mailto:you@example.com">Email me</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-foot">
+  <div class="wrap site-foot__inner">
+    <p>© 2026 Jordan Reyes</p>
+    <ul>
+      <li><a href="mailto:you@example.com">you@example.com</a></li>
+      <li><a href="https://github.com/your-username">GitHub</a></li>
+      <li><a href="https://www.linkedin.com/in/your-handle/">LinkedIn</a></li>
+      <li><a href="resume.pdf">Résumé</a></li>
+    </ul>
+  </div>
+</footer>
+
+</body>
+</html>
